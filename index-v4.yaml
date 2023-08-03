@@ -53,7 +53,7 @@ distributions:
     python_version: 2
   humble:
     distribution: [humble/distribution.yaml]
-    distribution_cache: https://urm.nvidia.com/artifactory/sw-isaac-ros-generic-local/humble-cache.yaml.gz
+    distribution_cache: https://github.com/HunterCrosland/ros_buildfarm/raw/hcrosland/sandbox/humble-cache.yaml.gz
     distribution_status: active
     distribution_type: ros2
     python_version: 3
