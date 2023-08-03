@@ -97,7 +97,7 @@ def get_sources(
 def _get_source_tag(
         rosdistro_name, pkg_name, os_name, os_code_name):
     assert os_name in ['debian', 'ubuntu']
-    return 'debian/%s/%s_%s' % \
+    return 'debian/%s/%s' % \
         (get_debian_package_name(rosdistro_name, pkg_name))
 
 
