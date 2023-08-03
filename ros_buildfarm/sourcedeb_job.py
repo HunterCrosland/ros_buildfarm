@@ -63,7 +63,7 @@ def get_sources(
 
     # If a tarball already exists reuse it
     origtgz_version = pkg_version.split('-')[0]
-    debian_package_name = get_debian_package_name(rosdistro_name, pkg_name)
+    debian_package_name = get_debian_package_name(pkg_name)
     filename = '%s_%s.orig.tar.gz' % (debian_package_name, origtgz_version)
 
     URL_TEMPLATE = '%s/pool/main/%s/%s/%s'
@@ -98,7 +98,7 @@ def _get_source_tag(
         rosdistro_name, pkg_name, os_name, os_code_name):
     assert os_name in ['debian', 'ubuntu']
     return 'debian/%s/%s' % \
-        (get_debian_package_name(rosdistro_name, pkg_name))
+        (rosdistro_name,get_debian_package_name(pkg_name))
 
 
 def build_sourcedeb(sources_dir, os_name=None, os_code_name=None):
