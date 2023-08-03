@@ -39,7 +39,7 @@ def get_sources(
 
     pkg_version = repo.release_repository.version
     tag = _get_source_tag(
-        rosdistro_name, pkg_name, pkg_version, os_name, os_code_name)
+        rosdistro_name, pkg_name, os_name, os_code_name)
 
     cmd = [
         'git', 'clone',
@@ -95,11 +95,10 @@ def get_sources(
 
 
 def _get_source_tag(
-        rosdistro_name, pkg_name, pkg_version, os_name, os_code_name):
+        rosdistro_name, pkg_name, os_name, os_code_name):
     assert os_name in ['debian', 'ubuntu']
-    return 'debian/%s_%s_%s' % \
-        (get_debian_package_name(rosdistro_name, pkg_name),
-         pkg_version, os_code_name)
+    return 'debian/%s/%s_%s' % \
+        (get_debian_package_name(rosdistro_name, os_code_name, pkg_name))
 
 
 def build_sourcedeb(sources_dir, os_name=None, os_code_name=None):
