@@ -38,8 +38,9 @@ def get_sources(
         return "Repository '%s' has no release version" % repo_name
 
     pkg_version = repo.release_repository.version
+    # TODO hcrosland: REVERT
     tag = _get_source_tag(
-        rosdistro_name, pkg_name, os_name, os_code_name)
+        rosdistro_name, pkg_name, os_name, 'jammy')
 
     cmd = [
         'git', 'clone',
