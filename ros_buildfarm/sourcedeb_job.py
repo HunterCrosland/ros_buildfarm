@@ -53,7 +53,7 @@ def get_sources(
     print("Invoking '%s'" % ' '.join(cmd))
     subprocess.check_call(cmd)
 
-    cmd = shlex.split(f"find {sources_dir} -type f -exec grep -l 'jammy' "+ "{} \; | xargs sed -i 's/jammy/focal/g'")
+    cmd = shlex.split(f"find {sources_dir} -type f -exec sed -i"+" 's/jammy/focal/g' {} \;")
     print("Invoking '%s'" % ' '.join(cmd))
     subprocess.check_call(cmd)
 
