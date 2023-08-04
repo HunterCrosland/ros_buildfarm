@@ -32,7 +32,7 @@ def get_sourcedeb(
         ("Sourcedeb directory '%s' must not have any " +
          "subfolders starting with '%s-'") % (sourcedeb_dir, package_name)
 
-    debian_package_name = get_debian_package_name(package_name)
+    debian_package_name = 'ros-rolling-' + get_debian_package_name(package_name)
     if not skip_download_sourcedeb:
         # get expected package version from rosdistro
         from rosdistro import get_distribution_cache
