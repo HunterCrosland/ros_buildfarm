@@ -26,13 +26,13 @@ def get_sourcedeb(
         rosdistro_index_url, rosdistro_name, package_name, sourcedeb_dir,
         skip_download_sourcedeb=False):
     # ensure that no source subfolder exists
-    debian_package_name = get_debian_package_name(rosdistro_name, package_name)
+    debian_package_name = get_debian_package_name(package_name)
     subfolders = _get_package_subfolders(sourcedeb_dir, debian_package_name)
     assert not subfolders, \
         ("Sourcedeb directory '%s' must not have any " +
          "subfolders starting with '%s-'") % (sourcedeb_dir, package_name)
 
-    debian_package_name = get_debian_package_name(rosdistro_name, package_name)
+    debian_package_name = get_debian_package_name(package_name)
     if not skip_download_sourcedeb:
         # get expected package version from rosdistro
         from rosdistro import get_distribution_cache
@@ -92,7 +92,7 @@ def get_sourcedeb(
 
 def append_build_timestamp(rosdistro_name, package_name, sourcedeb_dir):
     # ensure that one source subfolder exists
-    debian_package_name = get_debian_package_name(rosdistro_name, package_name)
+    debian_package_name = get_debian_package_name(package_name)
     subfolders = _get_package_subfolders(sourcedeb_dir, debian_package_name)
     assert len(subfolders) == 1, subfolders
     source_dir = subfolders[0]
@@ -119,7 +119,7 @@ def append_build_timestamp(rosdistro_name, package_name, sourcedeb_dir):
 
 def build_binarydeb(rosdistro_name, package_name, sourcedeb_dir):
     # ensure that one source subfolder exists
-    debian_package_name = get_debian_package_name(rosdistro_name, package_name)
+    debian_package_name = get_debian_package_name(package_name)
     subfolders = _get_package_subfolders(sourcedeb_dir, debian_package_name)
     assert len(subfolders) == 1, subfolders
     source_dir = subfolders[0]
