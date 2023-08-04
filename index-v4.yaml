@@ -107,7 +107,7 @@ distributions:
     python_version: 3
   rolling:
     distribution: [rolling/distribution.yaml]
-    distribution_cache: http://repo.ros2.org/rosdistro_cache/rolling-cache.yaml.gz
+    distribution_cache: https://github.com/HunterCrosland/ros_buildfarm/raw/hcrosland/sandbox/humble-cache.yaml.gz
     distribution_status: rolling
     distribution_type: ros2
     python_version: 3
