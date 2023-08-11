@@ -28,7 +28,6 @@ distributions:
     - apoddubny@nvidia.com
     release_builds:
       default: humble/release-build.yaml
-      jammy: humble/release-build-jammy.yaml
       ujv8: humble/release-ubuntu-arm64-build.yaml
     source_builds:
       default: humble/source-build.yaml
