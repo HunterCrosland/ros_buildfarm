@@ -93,10 +93,10 @@ def trigger_release_jobs(
                 pkg_name, target.os_name, target.os_code_name)
             if target.arch != 'source':
                 # binary job can be skipped if source job was triggered
-                if job_name in triggered_jobs:
-                    print(("  Skipping binary jobs of '%s' since the source " +
-                           "job was triggered") % job_name)
-                    continue
+                # if job_name in triggered_jobs:
+                #     print(("  Skipping binary jobs of '%s' since the source " +
+                #            "job was triggered") % job_name)
+                #     continue
                 job_name = get_binarydeb_job_name(
                     rosdistro_name, release_build_name,
                     pkg_name, target.os_name, target.os_code_name, target.arch)
