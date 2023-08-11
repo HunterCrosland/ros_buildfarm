@@ -101,7 +101,7 @@ repositories:
 target_repository: http://54.184.249.188/ubuntu/building
 targets:
   ubuntu:
-    focal:
+    jammy:
       amd64:
 type: release-build
 upload_credential_id: jenkins-agent
