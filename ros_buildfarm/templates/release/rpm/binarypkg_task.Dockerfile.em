@@ -49,16 +49,6 @@ RUN echo -e "@('\\n'.join(key.splitlines()))" > /etc/pki/mock/RPM-GPG-KEY-ros-bu
 @[end for]@
 COPY mock_config.cfg /etc/mock/ros_buildfarm.cfg
 
-# Upgrade cmake to 3.22.1 to match Ubuntu 22.04
-RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null \
-    && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null \
-    && apt-get update \
-    && apt-get remove -y cmake && apt-get purge -y cmake && apt-get remove -y cmake-data && apt-get purge -y cmake-data \
-    && apt-get install -y cmake=3.22.1-0kitware1ubuntu20.04.1 cmake-data=3.22.1-0kitware1ubuntu20.04.1 \
-    && cmake --version \
-&& rm -rf /var/lib/apt/lists/* \
-&& apt-get clean
-
 USER buildfarm
 ENTRYPOINT ["sh", "-c"]
 @{
