@@ -75,7 +75,7 @@ def get_sources(
                     continue
                 # Otherwise, join the packages back together
                 file.write(key + ": " + ", ".join(packages))
-            if line.startswith("Conflicts:"):
+            elif line.startswith("Conflicts:"):
                 continue
             else:
                 file.write(line)
