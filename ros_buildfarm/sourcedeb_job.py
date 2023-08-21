@@ -63,7 +63,21 @@ def get_sources(
 
     with open(control_file_path, 'w') as file:
         for line in lines:
-            if not line.startswith("Conflicts:"):
+            if line.startswith(("Depends:", "Build-Depends:")):
+                # Split the line into key and values
+                key, values = line.split(":", 1)
+                # Split the values by comma and strip spaces
+                packages = [pkg.strip() for pkg in values.split(",")]
+                # Remove 'libabsl-dev' from the list
+                packages = [pkg for pkg in packages if pkg != "libabsl-dev"]
+                # If 'libabsl-dev' was the only package, return an empty string
+                if not packages:
+                    continue
+                # Otherwise, join the packages back together
+                file.write(key + ": " + ", ".join(packages))
+            if line.startswith("Conflicts:"):
+                continue
+            else:
                 file.write(line)
 
     # ensure that the package version is correct
