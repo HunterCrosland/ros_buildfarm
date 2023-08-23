@@ -35,6 +35,14 @@ RUN apt-get install -y wget gnupg && wget -O - https://apt.kitware.com/keys/kitw
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean
 
+# Install abseil
+RUN cd ~ \
+    && mkdir abseil-source && cd abseil-source \
+    && git clone https://github.com/abseil/abseil-cpp.git \
+    && cd abseil-cpp && mkdir build && cd build \
+    && cmake .. -DCMAKE_INSTALL_PREFIX=~/abseil-source/CMakeProject/install \
+    && cmake --build . --target install
+
 @(TEMPLATE(
     'snippet/add_distribution_repositories.Dockerfile.em',
     distribution_repository_keys=distribution_repository_keys,
