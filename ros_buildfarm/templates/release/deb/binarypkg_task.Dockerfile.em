@@ -38,6 +38,7 @@ RUN apt-get install -y wget gnupg && wget -O - https://apt.kitware.com/keys/kitw
 # Install abseil
 RUN cd ~ \
     && mkdir abseil-source && cd abseil-source \
+    && apt-get update && apt-get install -y git \
     && git clone https://github.com/abseil/abseil-cpp.git \
     && cd abseil-cpp && mkdir build && cd build \
     && cmake .. -DCMAKE_INSTALL_PREFIX=~/abseil-source/CMakeProject/install \
