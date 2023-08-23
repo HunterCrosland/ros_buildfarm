@@ -41,7 +41,7 @@ RUN cd ~ \
     && apt-get update && apt-get install -y git build-essential g++ clang \
     && git clone https://github.com/abseil/abseil-cpp.git \
     && cd abseil-cpp && mkdir build && cd build \
-    && cmake .. -DCMAKE_INSTALL_PREFIX=/opt/ros/humble/install/share \
+    && cmake .. -DCMAKE_INSTALL_PREFIX=/opt/ros/humble \
     && cmake --build . --target install
 
 @(TEMPLATE(
