@@ -30,6 +30,8 @@ def get_run_command(indices, dependencies, dependency_versions):
       name = dependencies[index]
       if name == "meson":
         cmds.append("apt-get install -y python3-pip && pip3 install meson==0.57 && pip3 install ninja==1.11.1")
+      elif name == "swig":
+        cmds.appent('echo "{name}: {version}"'.format(name=name, version="4.0.2")
       else:
         cmds.append('echo "{name}: {version}"'.format(name=name, version=dependency_versions[name]))
         names.append(name)
