@@ -37,13 +37,13 @@ notification_emails:
 - apoddubny@nvidia.com
 prerequisites:
   debian_repositories:
-  - http://54.184.249.188/ubuntu/building
+  - http://10.0.10.50/ubuntu/building
   - http://repo.ros2.org/ubuntu/building
   - http://repositories.ros.org/ubuntu/main
   debian_repository_keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
-    Version: GnuPGv1
+    Version: GnuPG v1
 
     mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc
     VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro
@@ -147,8 +147,8 @@ prerequisites:
 rosdistro_index_url: https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml
 status_page_repositories:
   default:
-  - http://54.184.249.188/ubuntu/building
-  - http://54.184.249.188/ubuntu/testing
-  - http://54.184.249.188/ubuntu/main
+  - http://10.0.10.50/ubuntu/building
+  - http://10.0.10.50/ubuntu/testing
+  - http://10.0.10.50/ubuntu/main
 type: buildfarm
 version: 1
