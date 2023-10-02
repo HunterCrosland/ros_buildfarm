@@ -56,11 +56,11 @@ for (job_name in job_names) {
     }
     upstream_projects = []
     success = check_recursive_upstream_projects(p, upstream_projects, depth=1, verbose=false)
-    if (!success) {
-        println "  " + job_name + " (skipped project with disabled / failed / pending upstream job)"
-        skipped += 1
-        continue
-    }
+    //if (!success) {
+    //    println "  " + job_name + " (skipped project with disabled / failed / pending upstream job)"
+    //    skipped += 1
+    //    continue
+    //}
     any_triggered_job_is_upstream = false
     for (other_name in job_names) {
       if (other_name == job_name) {
