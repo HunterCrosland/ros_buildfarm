@@ -4,35 +4,13 @@
 distributions:
 
   humble:
-    ci_builds:
-      benchmark: humble/ci-benchmark.yaml
-      drake-ros-underlay: humble/ci-drake-ros-underlay.yaml
-      nightly-connext: humble/ci-nightly-connext.yaml
-      nightly-cross-vendor-connext-cyclonedds: humble/ci-nightly-cross-vendor-connext-cyclonedds.yaml
-      nightly-cross-vendor-connext-fastrtps: humble/ci-nightly-cross-vendor-connext-fastrtps.yaml
-      nightly-cross-vendor-connext-fastrtps-dynamic: humble/ci-nightly-cross-vendor-connext-fastrtps-dynamic.yaml
-      nightly-cross-vendor-cyclonedds-fastrtps: humble/ci-nightly-cross-vendor-cyclonedds-fastrtps.yaml
-      nightly-cross-vendor-cyclonedds-fastrtps-dynamic: humble/ci-nightly-cross-vendor-cyclonedds-fastrtps-dynamic.yaml
-      nightly-cross-vendor-fastrtps-fastrtps-dynamic: humble/ci-nightly-cross-vendor-fastrtps-fastrtps-dynamic.yaml
-      nightly-cyclonedds: humble/ci-nightly-cyclonedds.yaml
-      nightly-debug: humble/ci-nightly-debug.yaml
-      nightly-extra-rmw-release: humble/ci-nightly-extra-rmw-release.yaml
-      nightly-fastrtps: humble/ci-nightly-fastrtps.yaml
-      nightly-fastrtps-dynamic: humble/ci-nightly-fastrtps-dynamic.yaml
-      nightly-performance: humble/ci-nightly-performance.yaml
-      nightly-release: humble/ci-nightly-release.yaml
-      overlay: humble/ci-overlay.yaml
-    doc_builds:
-      default: humble/doc-build.yaml
     notification_emails:
     - apoddubny@nvidia.com
     release_builds:
       default: humble/release-build.yaml
       ujv8: humble/release-ubuntu-arm64-build.yaml
-    source_builds:
-      default: humble/source-build.yaml
 
-jenkins_url: http://isaac-ros-buildfarm.nvidia.com:8080/
+jenkins_url: https://isaac-ros-buildfarm.nvidia.com/
 notification_emails:
 - apoddubny@nvidia.com
 prerequisites:
@@ -43,7 +21,7 @@ prerequisites:
   debian_repository_keys:
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
-    Version: GnuPG v1
+    Version: GnuPGv1
 
     mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc
     VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro
@@ -105,44 +83,35 @@ prerequisites:
     -----END PGP PUBLIC KEY BLOCK-----
   - |
     -----BEGIN PGP PUBLIC KEY BLOCK-----
-    
-    mQGNBF+IyYYBDACy24BXp4JYZTmSgImBRZZGA9KBZ5BFax+4My0w4a1hXuWqDWlL
-    2Kr8hAUB3KuJkzrJMc3hydqnOtxCQ7U5iIldr9RJWLX9Ws3cGsKGnN9aQdPU8i/H
-    ZS+f3Qg/FXtKh+uFNJBnEjhh4x4YFXzbky6le02cJ9FxH9tiWf2QOdyqPlaO4jS7
-    XVQQSPFijWMeH042vCgAn+CQtVs2ga46Pa791YduinDVyFFYGlmQYclVY8hNdAe1
-    CUE7VizfCjpATPAjTtbVxvnwmLy5FOWzDA+aFAM4lFYCDMu6RizL3kyqQYqVjhx/
-    dJary3zu9/vfk9PoNf6IJ0Ri3zSmPSsS0lo+P90qUILkQdTMahjkdJaT6rtsoU9w
-    8hpXYnMPtBOLbUGZ5ZNVg4u6FmQZGOkrXMkv60jgbiX8j9Ed9VJ4pqPWxSYgymPE
-    djCruNHsqJ2jHyslITPI+QmV5hv8WrbeHc8JNOgrUlCxycBdS1HBde/YC1IcX6L+
-    NAizAfdDrNm8k0UAEQEAAbQsVGhyb3dhd2F5IHRlc3QgZ3BnIGtleSA8ZXhhbXBs
-    ZUBleGFtcGxlLmNvbT6JAdQEEwEIAD4CGwMFCwkIBwIGFQoJCAsCBBYCAwECHgEC
-    F4AWIQQ19CRgF22PsjuUhZtKhJv4gXr/GgUCZJDzJQUJCqvEHwAKCRBKhJv4gXr/
-    GnMIC/sGf24pRN+ESXQT2p/AXWru2bVAZZiRuN0U9suEBysoKPCtCBvF6kwo1N59
-    gicTB4Dbk6lg7Yhp1Qy6VDtjS9DPk+NaeQO4Y08UtLP54pgyCuPgO4ai5uVZHnrL
-    WlNbKIZizuRpibi6HNIBgpAEM7I82dHrojMcQbvQlcv5/TnpKilaIwoAJaI5ybn1
-    LBeFJzg4k9Xx41iOAsoS4/Sc9IND53qesmNeTT9fcF0GteEaOSpfQi9LHC9sKiir
-    yeRLtDm33uLk0xUdMoSvT5iSBvZnJISMQcli7V7oKTvbHPItA6pPb7WN/bfyJVjV
-    wnAcNKROvKC5ZAohZ0IRaW95DMca4pUrX7s4R6fzwYnOFBLrc6eBiDyCxi1S2641
-    +RNevUEKLPpqCeU+sBB3Mfu1wjmgqzD5vFe3T0Im5gbWO0BKrOiSodkrwx3vctug
-    PmZRRoHBz586W3+4RCvhIcdWFEhsNte7ufFTorpGT3gELPLnl0K5ijfPQZLCtYLn
-    Fco1Vl65AY0EX4jJhgEMALePq4uSl9boaXNJuRLJlAFnL2zJW9mTiLtvcONOSboQ
-    87lreZJUgrlIghmB175XBwJzbLNxVq0WTRPHW0R26+xCsL5TfPQfFPk2a2aMHDWq
-    c3q/ceNksMi6Gr1GcjPiMVHM/70B0a1PJ/ZJYRKuRmqXDhwpXyuZ+7jlH98J1+gB
-    yVfSWCniwrH2oEnLVbCiCLuPuFvh17CmsV8J634atz0neu3zG0zLGwQ+yJdBuVHq
-    D1hcEwJLWdBQz7EwzV/pi5mKiA7PcRzFWjlcZOPOuxWzDp+hnEIo+gCrn/WbgvBa
-    OHc3NECkRkd/Xt683Kkn8WXQZso8omBPGnXnBml6mbL7jPG1+3HVx/jhkL599lJa
-    k1c3OE4tP9ZjVvC9e8ywWr4svvQ2TGkTu0PnBExXrcUFs0+PwV1Th0j5t3xdS2No
-    PUxPIL0xrEZN62/f+6019CWsMhvQzB1Zx4Bi0u365aKPyEYXcndNp1RmFYki/aEG
-    XVikse4K6DjeY/di2svn3QARAQABiQG8BBgBCAAmAhsMFiEENfQkYBdtj7I7lIWb
-    SoSb+IF6/xoFAmSQ81kFCQqrxFMACgkQSoSb+IF6/xri7Av/ZqJ/Nn7V7SV8ZYxA
-    50iMWlx8NbU9A8ZC1NQAalxzaOJqRHAvJhU4oyr1cs3l88eO8CgM42SDC+50NP8S
-    1JZx55WcA3C619Db0NN1uY37gbY2zJ0+6StTjRsj1uahQPUldzdcLxWlO168qbWP
-    UF0+vJwJ4fk3e0w+EjyGCQ2KCrNI3Gi4OGslyK0YADG3awd02rXfD/STATu/eBMN
-    hvNck9++GPncnsoURpdjdZb2TPg6dDcaLjmEz002Smu/Et+uBCEoqeLj8WkLt4na
-    Hca4kEpQ/tNK0TLa9BbiUtzJlcQKFhliEoKt2aT6AhhtM81kIds7qZnEmjHSIgK5
-    ddqeH2CaAOgZ/VtVqeLKvAFn02pY64FsqgfFrzRvckpcisHuSb4WrvYR4Li6QA13
-    az2V6jXeve8d5Ud7tyl49rkrKJX3I2KOZmzxgdWXZ40z6u0W8aeF/0/zcVVvT5uT
-    JveY938LGgMCSjcTHhD36j1FHXzZ+XZJIA7IgvSGM+V60YoW\n=G3+D
+
+    mQENBGT3nCQBCADr9tS5AqE4njTuG8IoobIcLLm9372dYlPSwVQs1gQIqDqVVRoG
+    b53JB0m+y9I1ykdBJIG0oIQGeHpbTQ41+FCYGaq1zu76gffqhUp1Le708uh7NzoG
+    CpT9WisMN/sQfJl6XYPrHkNknb8aISKNctPzbR/mnBp4iAhWPoiIgsbTydUHLnhL
+    QvU2qCqv0SYdlYGXnQXWT5BgepL0tewQ5avFvSjj1pUfITbs1uCLEZmNq2Rzoguc
+    MQVC6lGxEhKYkAZHjRZtiLEac4lKOwwF5AhXnbEfnimKFoE75h+UEoQJkqj7zeYA
+    OG/0NueHqQDI887QU4YG/Py3RK28L1kyXRZbABEBAAG0P0FsZXhhbmRlciBQb2Rk
+    dWJueSAoSXNhYWMgUk9TIEJ1aWxkZmFybSkgPGFwb2RkdWJueUBudmlkaWEuY29t
+    PokBVAQTAQoAPhYhBJ7rcZWkvZR8VyZm+bvl6m3mgbyrBQJk95wkAhsDBQkJZgGA
+    BQsJCAcCBhUKCQgLAgQWAgMBAh4BAheAAAoJELvl6m3mgbyrk1IH/0eglXPV4bYP
+    Oaq9h8MWvVyhor/pO3gQZjMFEJDXvBCJgVdYdyW88Yg6uS7dT8Jh49SIdrrEBK9P
+    zjkBje+YNR3RAoyy52EwVvlw/+67QDbVeIYPB443bEd9/s66EmOeQHs6NqIC6Rpd
+    munjnWvfNaICOqBuQSh5VWQZVIgd8iNmvMqsm8zH7fwtmjOXG2HcMH8YjeFo1z8b
+    IgBEX9fzKpr3i1s1SSqwWhdfRSFEvdkQO4u/2AsswTd3kSS0ZsR5Lo4wsZpNHhVI
+    +XQLSmR6Qoj0JBfXizTl0sCKg0tpgO6ORSwt7oCr0u+lB05m7wl01ijPZ2x4K+7M
+    ffcs47RPSd25AQ0EZPecJAEIAJ+5+4Tr5rN2OR3MrbMEwuUi9bWIXvhjgErD7UQ+
+    3BuVs3V5/dWNC3BfTy1B0l2zjs/ak15oe86U17kk3coGgZr/6WmZxLYmNBd+K0vi
+    RPiOZsj/OmqzGSzE2wQ+Wr1U0NA1aTky3iQscznw8oqsvaEFN8TFBAAn5abB3SHj
+    NBWH9NEShCpkz0gA++25D/Yq635By3vXP76n3KaZHLV35WJgDNu2oG/r06Lq7VLU
+    bn+E0MRKIvXpgxnMixqZMrDr8TDi+Xt6/A6UAvSvrsEKm2t5NW6Fw6dfqR0BExtz
+    cT4xdBUhaZtiqh+2xyU9bfqjwFju8WzHJ4IPIzz1w7FTERcAEQEAAYkBPAQYAQoA
+    JhYhBJ7rcZWkvZR8VyZm+bvl6m3mgbyrBQJk95wkAhsMBQkJZgGAAAoJELvl6m3m
+    gbyr6PoH/0El0rFOygje3sX+sA2ii4cz98OJKkk6EBLEk/RJC/n21Nq+4xdhrd1U
+    A+n3M/cewB7fbF7NWXcZ8VAB46NgEgQDyvS4NFzGcTI6xXpp5cDYBOVmwK0YIMHs
+    VmwaR23pHJvhXQ0KZxnBYxCr/9+hu1Zfc9WCAau9uOJz6HxgeIFzGc40ZkLNS8Ks
+    d9uZlhPCPXuG2mtFA0oiIXDMRp7ode4FBKozG+eBAwKLz04LIOafgogJauaXAgVl
+    3jAbFq4GPazsIseOfXRQcx8mkWiiV0bbs+esP3at2K682eKOve6JWDFxtUfU9ZOU
+    6zDqPEEOu9eY5+UhtBOcU/sLarKr0a8=
+    =tl3u
     -----END PGP PUBLIC KEY BLOCK-----
 rosdistro_index_url: https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml
 status_page_repositories:
