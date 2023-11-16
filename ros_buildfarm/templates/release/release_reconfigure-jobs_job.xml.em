@@ -78,6 +78,13 @@ if (package_names) {
 ))@
 @(SNIPPET(
     'builder_shell',
+    script="""rm -fr $WORKSPACE/classpath
+mkdir -p $WORKSPACE/classpath
+cd $WORKSPACE/classpath
+wget --no-verbose https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/java-diff-utils/diffutils-1.2.1.jar""",
+))@
+@(SNIPPET(
+    'builder_shell',
     script='\n'.join([
         'rm -fr $WORKSPACE/docker_generate_release_jobs',
         'rm -fr $WORKSPACE/reconfigure_jobs',
@@ -130,6 +137,7 @@ if (package_names) {
     'builder_system-groovy',
     command=None,
     script_file='$WORKSPACE/reconfigure_jobs/reconfigure_jobs.groovy',
+    classpath='$WORKSPACE/classpath/diffutils-1.2.1.jar',
 ))@
   </builders>
   <publishers>
