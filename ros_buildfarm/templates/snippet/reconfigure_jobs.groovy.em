@@ -1,5 +1,5 @@
 this.class.classLoader.rootLoader.addURL(
-   new URL("https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/java-diff-utils/diffutils-1.2.1.jar"))
+   new URL("https://search.maven.org/remotecontent?filepath=io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar"))
 import difflib.DiffUtils
 import groovy.io.FileType
 @@ThreadInterrupt
