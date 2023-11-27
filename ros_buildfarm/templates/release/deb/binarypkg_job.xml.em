@@ -167,6 +167,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
     ] if shared_ccache else []) + [
         'docker run' +
         ' --rm ' +
+        ' --user root' +
         ' --cidfile=$WORKSPACE/docker_build_binarydeb/docker.cid' +
         ' -e=HOME=' +
         ' -e=TRAVIS=$TRAVIS' +
