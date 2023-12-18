@@ -76,8 +76,8 @@ if (repository_names) {
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_generate_ci_jobs',
-        'rm -fr $WORKSPACE/reconfigure_jobs',
+        'sudo rm -fr $WORKSPACE/docker_generate_ci_jobs',
+        'sudo rm -fr $WORKSPACE/reconfigure_jobs',
         'mkdir -p $WORKSPACE/docker_generate_ci_jobs',
         'mkdir -p $WORKSPACE/reconfigure_jobs',
         '',
