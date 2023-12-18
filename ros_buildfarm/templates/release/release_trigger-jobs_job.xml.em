@@ -88,8 +88,8 @@ if missed_jobs:
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_trigger_jobs',
-        'rm -fr $WORKSPACE/trigger_jobs',
+        'sudo rm -fr $WORKSPACE/docker_trigger_jobs',
+        'sudo rm -fr $WORKSPACE/trigger_jobs',
         'mkdir -p $WORKSPACE/docker_trigger_jobs',
         'mkdir -p $WORKSPACE/trigger_jobs',
         '',
@@ -120,7 +120,7 @@ if missed_jobs:
         'echo "# END SECTION"',
         '',
         'echo "# BEGIN SECTION: Run Dockerfile - trigger jobs"',
-        'rm -fr $WORKSPACE/package_repo_cache',
+        'sudo rm -fr $WORKSPACE/package_repo_cache',
         'mkdir -p $WORKSPACE/package_repo_cache',
         'docker run' +
         ' --rm ' +

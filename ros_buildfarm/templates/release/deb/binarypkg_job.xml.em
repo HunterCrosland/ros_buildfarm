@@ -87,7 +87,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_generating_docker',
+        'sudo rm -fr $WORKSPACE/docker_generating_docker',
         'mkdir -p $WORKSPACE/docker_generating_docker',
         '',
         '# monitor all subprocesses and enforce termination',
@@ -124,8 +124,8 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'echo "# BEGIN SECTION: Run Dockerfile - binarydeb task"',
         '# ensure to have write permission before trying to delete the folder',
         'if [ -f $WORKSPACE/binarydeb ] ; then chmod -R u+w $WORKSPACE/binarydeb ; fi',
-        'rm -fr $WORKSPACE/binarydeb',
-        'rm -fr $WORKSPACE/docker_build_binarydeb',
+        'sudo rm -fr $WORKSPACE/binarydeb',
+        'sudo rm -fr $WORKSPACE/docker_build_binarydeb',
         'mkdir -p $WORKSPACE/binarydeb',
         'mkdir -p $WORKSPACE/docker_build_binarydeb',
     ] + ([
@@ -186,7 +186,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'echo "# BEGIN SECTION: Clean up to save disk space on agents"',
         '# ensure to have write permission before trying to delete the folder',
         'chmod -R u+w $WORKSPACE/binarydeb',
-        'rm -fr binarydeb/*/*',
+        'sudo rm -fr binarydeb/*/*',
         'echo "# END SECTION"',
         'fi',
     ]),
@@ -195,7 +195,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
 @# @(SNIPPET(
 @#     'builder_shell',
 @#     script='\n'.join([
-@#         'rm -fr $WORKSPACE/docker_install_binarydeb',
+@#         'sudo rm -fr $WORKSPACE/docker_install_binarydeb',
 @#         'mkdir -p $WORKSPACE/docker_install_binarydeb',
 @#         '',
 @#         '# monitor all subprocesses and enforce termination',

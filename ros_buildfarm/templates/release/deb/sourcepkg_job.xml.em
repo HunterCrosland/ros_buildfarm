@@ -77,7 +77,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_sourcedeb',
+        'sudo rm -fr $WORKSPACE/docker_sourcedeb',
         'mkdir -p $WORKSPACE/docker_sourcedeb',
         '',
         '# monitor all subprocesses and enforce termination',
@@ -108,7 +108,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'echo "# END SECTION"',
         '',
         'echo "# BEGIN SECTION: Run Dockerfile - generate sourcedeb"',
-        'rm -fr $WORKSPACE/sourcedeb',
+        'sudo rm -fr $WORKSPACE/sourcedeb',
         'mkdir -p $WORKSPACE/sourcedeb/source',
         'docker run' +
         ' --rm ' +
@@ -129,7 +129,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
     script='\n'.join([
         'if [ "$skip_cleanup" = "false" ]; then',
         'echo "# BEGIN SECTION: Clean up to save disk space on agents"',
-        'rm -fr sourcedeb/source',
+        'sudo rm -fr sourcedeb/source',
         'echo "# END SECTION"',
         'fi',
     ]),

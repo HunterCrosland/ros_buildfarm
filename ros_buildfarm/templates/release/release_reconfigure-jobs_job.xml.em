@@ -78,7 +78,7 @@ if (package_names) {
 ))@
 @(SNIPPET(
     'builder_shell',
-    script="""rm -fr $WORKSPACE/classpath
+    script="""sudo rm -fr $WORKSPACE/classpath
 mkdir -p $WORKSPACE/classpath
 cd $WORKSPACE/classpath
 wget --no-verbose https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/java-diff-utils/diffutils-1.2.1.jar""",
@@ -86,8 +86,8 @@ wget --no-verbose https://storage.googleapis.com/google-code-archive-downloads/v
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_generate_release_jobs',
-        'rm -fr $WORKSPACE/reconfigure_jobs',
+        'sudo rm -fr $WORKSPACE/docker_generate_release_jobs',
+        'sudo rm -fr $WORKSPACE/reconfigure_jobs',
         'mkdir -p $WORKSPACE/docker_generate_release_jobs',
         'mkdir -p $WORKSPACE/reconfigure_jobs',
         '',

@@ -77,7 +77,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_sourcerpm',
+        'sudo rm -fr $WORKSPACE/docker_sourcerpm',
         'mkdir -p $WORKSPACE/docker_sourcerpm',
         '',
         '# monitor all subprocesses and enforce termination',
@@ -108,7 +108,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'echo "# END SECTION"',
         '',
         'echo "# BEGIN SECTION: Run Dockerfile - generate sourcerpm"',
-        'rm -fr $WORKSPACE/sourcepkg',
+        'sudo rm -fr $WORKSPACE/sourcepkg',
         'mkdir -p $WORKSPACE/sourcepkg',
         'docker run' +
         ' --rm' +
@@ -130,7 +130,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'ssh %s -- mkdir -p /tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'xargs -a sourcepkg/rpm_upload_args.txt -I @ scp @ %s:/tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'xargs -a sourcepkg/rpm_import_args.txt ssh %s -- createrepo-agent /var/repos/%s/building/%s/' % (upload_host, os_name, os_code_name),
-        'ssh %s -- rm -fr /tmp/upload-${BUILD_TAG}/' % (upload_host,),
+        'ssh %s -- sudo rm -fr /tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'echo "# END SECTION"',
     ]),
 ))@
@@ -139,7 +139,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
     script='\n'.join([
         'if [ "$skip_cleanup" = "false" ]; then',
         'echo "# BEGIN SECTION: Clean up to save disk space on agents"',
-        'rm -fr sourcepkg',
+        'sudo rm -fr sourcepkg',
         'echo "# END SECTION"',
         'fi',
     ]),

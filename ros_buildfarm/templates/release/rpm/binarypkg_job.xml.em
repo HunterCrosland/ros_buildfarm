@@ -90,7 +90,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
 @(SNIPPET(
     'builder_shell',
     script='\n'.join([
-        'rm -fr $WORKSPACE/docker_binaryrpm',
+        'sudo rm -fr $WORKSPACE/docker_binaryrpm',
         'mkdir -p $WORKSPACE/docker_binaryrpm',
         '',
         '# monitor all subprocesses and enforce termination',
@@ -125,7 +125,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'echo "# END SECTION"',
         '',
         'echo "# BEGIN SECTION: Run Dockerfile - build binaryrpm"',
-        'rm -fr $WORKSPACE/binarypkg',
+        'sudo rm -fr $WORKSPACE/binarypkg',
         'mkdir -p $WORKSPACE/binarypkg/source',
     ] + ([
         'if [ ! -d "$HOME/.ccache" ]; then mkdir $HOME/.ccache; fi',
@@ -151,7 +151,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         'ssh %s -- mkdir -p /tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'xargs -a binarypkg/rpm_upload_args.txt -I @ scp @ %s:/tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'xargs -a binarypkg/rpm_import_args.txt ssh %s -- createrepo-agent /var/repos/%s/building/%s/ --arch %s --invalidate-family --invalidate-dependants' % (upload_host, os_name, os_code_name, arch),
-        'ssh %s -- rm -fr /tmp/upload-${BUILD_TAG}/' % (upload_host,),
+        'ssh %s -- sudo rm -fr /tmp/upload-${BUILD_TAG}/' % (upload_host,),
         'echo "# END SECTION"',
     ]),
 ))@
