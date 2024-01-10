@@ -156,7 +156,7 @@ but disabled since the package is blacklisted (or not whitelisted) in the config
         '# build and run build_binarydeb Dockerfile',
         'cd $WORKSPACE/docker_build_binarydeb',
         'python3 -u $WORKSPACE/ros_buildfarm/scripts/misc/docker_pull_baseimage.py',
-        'docker build --force-rm -t --no-cache binarydeb_build.%s_%s_%s_%s_%s .' % (rosdistro_name, os_name, os_code_name, arch, pkg_name),
+        'docker build --force-rm --no-cache -t binarydeb_build.%s_%s_%s_%s_%s .' % (rosdistro_name, os_name, os_code_name, arch, pkg_name),
         'echo "# END SECTION"',
         '',
         'echo "# BEGIN SECTION: Run Dockerfile - build binarydeb"',
